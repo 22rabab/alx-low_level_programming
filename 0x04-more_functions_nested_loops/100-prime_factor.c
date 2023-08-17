@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 /**
  * _sqrt - find the square root
@@ -24,7 +25,7 @@ double _sqrt(double x)
 }
 
 /**
- * largest_prime_factore - finds and prints the largest
+ * largest_prime_factor - finds and prints the largest
  *                      prime factore of number (num)
  *
  * @num: number to find
