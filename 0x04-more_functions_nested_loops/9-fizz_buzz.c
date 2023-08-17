@@ -18,23 +18,23 @@ int main(void)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
 		{
-			_putchar("FizzBuzz ");
+			_putchar('FizzBuzz ');
 		}
 		else if (i % 3 == 0)
 		{
-			_putchar("Fizz ");
+			_putchar('Fizz ');
 		}
 		else if (i % 5 == 0)
 		{
-			_putchar("Buzz ");
+			_putchar('Buzz ');
 		}
 		else
 		{
-			_putchar("%d ", i);
+			_putchar('%d ', i);
 		}
 	}
 
-	_putchar("\n");
+	_putchar('\n');
 
 
 	return (0);
