@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * main - 1 - 100 followed by new line
@@ -12,7 +12,6 @@
 
 int main(void)
 {
-	int i;
 
 	for (i = 1; i <= 100; i++)
 	{
@@ -36,11 +35,10 @@ int main(void)
 		{
 			printf(" ");
 		}
-		else
-		{
-			printf("\n");
-		}
 	}
+
+	printf("\n");
+
 
 	return (0);
 }
