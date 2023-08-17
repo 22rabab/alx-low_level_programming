@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_line - draws a straight line of underscores
- * @n: number of times the character '_' should be printed
+ * print_diagonal - draws a diagonal line of backslashes
+ * @n: number of times the character '\' should be printed
  */
-void print_line(int n)
+void print_diagonal(int n)
 {
 	if (n <= 0)
 	{
@@ -12,13 +12,16 @@ void print_line(int n)
 	}
 	else
 	{
-		int i;
+		int i, j;
 
 		for (i = 0; i < n; i++)
 		{
-			_putchar('_');
+			for (j = 0; j < i; j++)
+			{
+				_putchar(' ');
+			}
+			_putchar('\\');
+			_putchar('\n');
 		}
-
-		_putchar('\n');
 	}
 }
