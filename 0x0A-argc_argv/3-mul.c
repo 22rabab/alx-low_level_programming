@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - prints sum of 2 numbers
@@ -20,6 +21,6 @@ int main(int argc, char *argv[])
 	{
 	printf("Error\n");
 	return (1);
-	}
+	i}
 	return (0);
 }
