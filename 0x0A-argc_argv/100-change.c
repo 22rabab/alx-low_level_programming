@@ -1,4 +1,6 @@
-#include "main.h"
+#include <stdio.h>
+#include <stlib.h>
+
 /**
  * _strstr - Entry point
  * @haystack: input
