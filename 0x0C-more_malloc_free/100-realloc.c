@@ -1,54 +1,44 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
- *
- * Return: Nothing.
+ * argstostr - main entry
+ * @ac: int input
+ * @av: double pointer array
+ * Return: 0
  */
-void simple_print_buffer(char *buffer, unsigned int size)
+char *argstostr(int ac, char **av)
 {
-    unsigned int i;
+	int i, n, r = 0, l = 0;
+	char *str;
 
-    i = 0;
-    while (i < size)
-    {
-        if (i % 10)
-        {
-            printf(" ");
-        }
-        if (!(i % 10) && i)
-        {
-            printf("\n");
-        }
-        printf("0x%02x", buffer[i]);
-        i++;
-    }
-    printf("\n");
-}
+	if (ac == 0 || av == NULL)
+		return (NULL);
 
-/**
- * main - check the code for
- *
- * Return: Always 0.
- */
-int main(void)
-{
-    char *p;
-    int i;
+	for (i = 0; i < ac; i++)
+	{
+		for (n = 0; av[i][n]; n++)
+			l++;
+	}
 
-    p = malloc(sizeof(char) * 10);
-    p = _realloc(p, sizeof(char) * 10, sizeof(char) * 98);
-    i = 0;
-    while (i < 98)
-    {
-        p[i++] = 98;
-    }
-    simple_print_buffer(p, 98);
-    free(p);
-    return (0);
+	l += ac;
+
+	str = malloc(sizeof(char) * l + 1);
+
+	if (str == NULL)
+		return (NULL);
+
+	for (i = 0; i < ac; i++)
+	{
+	for (n = 0; av[i][n]; n++)
+	{
+		str[r] = av[i][n];
+		r++;
+	}
+	if (str[r] == '\0')
+	{
+		str[r++] = '\n';
+	}
+	}
+
+	return (str);
 }
