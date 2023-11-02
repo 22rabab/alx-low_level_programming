@@ -1,44 +1,46 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * argstostr - main entry
- * @ac: int input
- * @av: double pointer array
- * Return: 0
+ * *_realloc - reallocates a memory block using malloc and free
+ * @ptr: pointer to the memory previously allocated and free
+ * @old_size: size of the allocated memory block
+ * @new_size: new size of the new memory block
+ * Return: pointer to the newly allocated memory block
  */
-char *argstostr(int ac, char **av)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	int i, n, r = 0, l = 0;
-	char *str;
+	char *ptrl;
+	char *old_ptr;
+	unsigned int i;
 
-	if (ac == 0 || av == NULL)
+	if (new_size == old_size)
+		return (ptr);
+	if (new_size == 0 && ptr)
+	{
+		free(ptr);
+		return (NULL);
+	}
+
+	if (!ptr)
+		return (malloc(new_size));
+
+	ptr = malloc(new_size);
+
+	if (!ptr)
 		return (NULL);
 
-	for (i = 0; i < ac; i++)
+	old_ptr = ptr;
+	if (new_size < old_size)
 	{
-		for (n = 0; av[i][n]; n++)
-			l++;
+		for (i = 0; i < old_size; i++)
+			ptrl[i] = old_ptr[i];
+	}
+	if (new_size > old_size)
+	{
+		for (i = 0; i < old_size; i++)
+			ptrl[i] = old_ptrl[i];
 	}
 
-	l += ac;
-
-	str = malloc(sizeof(char) * l + 1);
-
-	if (str == NULL)
-		return (NULL);
-
-	for (i = 0; i < ac; i++)
-	{
-	for (n = 0; av[i][n]; n++)
-	{
-		str[r] = av[i][n];
-		r++;
-	}
-	if (str[r] == '\0')
-	{
-		str[r++] = '\n';
-	}
-	}
-
-	return (str);
+	free(ptr);
+	return (ptrl);
 }
